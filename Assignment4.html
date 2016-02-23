@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule" >
+<head>
+    <title>Two Controllers</title>
+	<meta charset="utf-8" />
+    <script src="angular.js"></script>
+    <script>
+        var myModule = angular.module('myModule', []);
+
+        myModule.controller('first', ['$scope', function ($scope) {
+            $scope.message = "This comes from the first controller";
+        }]);
+
+        myModule.controller('second',['$scope', function ($scope) {
+            $scope.message = "This comes from the second controller";
+        }]);
+    </script>
+
+</head>
+<body>
+    <div ng-controller="first">
+        {{message}}
+    </div>
+    <div  ng-controller="second">
+        {{message}}
+    </div>
+</body>
+</html>
